@@ -1,13 +1,13 @@
 import "./App.css";
-import PasswordFieldWithCarousel from "./components/PasswordFieldWithCarousel";
+// import PasswordFieldWithCarousel from "./components/PasswordFieldWithCarousel";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Img from "./components/Img";
 import halloween from "./assets/dome_y_randy_en_la_fiesta_de_halloween_2024.jpg";
-import juntos from "./assets/juntos.jpeg";
 import ella from "./assets/ella_sola_linda.jpeg";
+import one from "./assets/1.jpg";
 import ProtectedDestination from "./components/ProtectedDestination";
-
+import FloatingHearts from "./components/FloatingHearts";
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -29,7 +29,7 @@ const responsive = {
 };
 
 const images0 = [
-  juntos,
+  one,
   "https://via.placeholder.com/300x200?text=Image+2",
   "https://via.placeholder.com/300x200?text=Image+5",
   halloween,
@@ -67,6 +67,13 @@ const renderCarousel = (images: string[]) => {
 function App() {
   return (
     <>
+      <div>
+        <FloatingHearts />
+        <h1 style={{ textAlign: "center", color: "#fff" }}>
+          Welcome to My Page!
+        </h1>
+      </div>
+
       <h1 className="text-center text-primary fw-bold d-none d-md-block">
         Hasta el futuro juntos
       </h1>
@@ -75,13 +82,16 @@ function App() {
       {/*<PasswordFieldWithCarousel></PasswordFieldWithCarousel>*/}
 
       <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden"></div>
-      <ProtectedDestination correctPassword="12345">
+      <ProtectedDestination
+        correctPassword="12345"
+        prompt="El dia que nos conocimos"
+      >
         <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
           <h2 className=" mb-3 text-center">Carousel 1</h2>
           {renderCarousel(images0)}
         </div>
       </ProtectedDestination>
-      <ProtectedDestination correctPassword="12345">
+      <ProtectedDestination correctPassword="12345" prompt="cuanto me quieres">
         <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
           <h2 className=" mb-3 text-center">Carousel 1</h2>
           {renderCarousel(images0)}

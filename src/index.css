@@ -70,3 +70,137 @@ button:focus-visible {
 .image-wrapper {
   padding: 0 10px;
 }
+
+body {
+  background: linear-gradient(135deg, #ffc0cb, #ff69b4, #ff1493);
+  background-size: 400% 400%;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background-color: #ffc0cb;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: float 6s infinite ease-in-out;
+}
+
+body::before {
+  top: -50px;
+  left: -50px;
+}
+
+body::after {
+  bottom: -50px;
+  right: -50px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+body {
+  background: linear-gradient(
+      135deg,
+      rgba(255, 192, 203, 0.8),
+      rgba(255, 105, 180, 0.8)
+    ),
+    url("https://www.example.com/your-image.jpg");
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+body {
+  background-color: #ffc0cb;
+  background-image: url("https://www.heropatterns.com/assets/patterns/topography.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+}
+
+body {
+  background-color: #ffc0cb; /* Rose background */
+  overflow: hidden; /* Prevent scrollbars from appearing */
+  position: relative;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(calc(100vw - 50vw)) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Create individual heart elements */
+.heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  transform: rotate(45deg);
+  animation: floatHearts 8s infinite ease-in-out;
+  opacity: 0;
+}
+
+/* Adjust shape for the heart's "lobes" */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  left: auto;
+  right: -25px;
+}
+
+@keyframes heartAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
