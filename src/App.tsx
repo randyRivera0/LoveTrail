@@ -28,7 +28,7 @@ import nineteen from "./assets/19.jpg";
 import twenty from "./assets/20.jpg";
 import twentyOne from "./assets/21.jpg";
 import twentyTwo from "./assets/22.jpg";
-import twentyThree from "./assets/23.jpg";
+import twentyThree from "./assets/23.jpeg";
 import twentyFour from "./assets/24.jpg";
 import twentyFive from "./assets/25.jpg";
 import twentySix from "./assets/26.jpg";
@@ -54,17 +54,35 @@ const responsive = {
     items: 1,
   },
 };
-
+/*
 function generateImagePaths(start: number, end: number): string[] {
   const paths: string[] = [];
   for (let i = start; i <= end; i++) {
     paths.push("./assets/" + i + ".jpg");
   }
   return paths;
-}
+}*/
 
 const images0 = [one, two, three, four, five, six, seven];
-const images1 = [eight, nine, ten, , eleven, twelve, thirteen, fourteen];
+const images1 = [eight, nine, ten, eleven, twelve, thirteen, fourteen];
+const images2 = [
+  fifteen,
+  sixteen,
+  seventeen,
+  eighteen,
+  nineteen,
+  twenty,
+  twentyOne,
+];
+const images3 = [
+  twentyTwo,
+  twentyThree,
+  twentyFour,
+  twentyFive,
+  twentySix,
+  twentySeven,
+  twentyEight,
+];
 
 const renderCarousel = (images: string[]) => {
   return (
@@ -102,27 +120,36 @@ function App() {
         <h1 style={{ textAlign: "center", color: "#fff" }}></h1>
       </div>
 
-      <h1 className="text-center text-primary fw-bold d-none d-md-block">
+      <h1 className="text-center text-white fw-bold d-none d-md-block">
         Hasta el futuro juntos
       </h1>
 
-      <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden"></div>
-      <ProtectedDestination
-        correctPassword="12345"
-        prompt="🔒El dia que nos conocimos"
-      >
-        <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
+      <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
+        <ProtectedDestination
+          correctPassword="riocentro ceibos"
+          prompt="🔒¿Cual fue nuestra primera salida en la calle?🔒"
+        >
           {renderCarousel(images0)}
-        </div>
-      </ProtectedDestination>
-      <ProtectedDestination
-        correctPassword="12345"
-        prompt="🔒cuanto me quieres"
-      >
-        <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
+        </ProtectedDestination>
+        <ProtectedDestination
+          correctPassword="12/06/2024"
+          prompt="🔒¿En que fecha nos hicimos novios?🔒"
+        >
           {renderCarousel(images1)}
-        </div>
-      </ProtectedDestination>
+        </ProtectedDestination>
+        <ProtectedDestination
+          correctPassword="rectorado"
+          prompt="🔒¿Donde fue nuestro primer beso?🔒"
+        >
+          {renderCarousel(images2)}
+        </ProtectedDestination>
+        <ProtectedDestination
+          correctPassword="si"
+          prompt="🔒¿Deseas continuar juntos por mucho tiempo?🔒"
+        >
+          {renderCarousel(images3)}
+        </ProtectedDestination>
+      </div>
     </>
   );
 }
