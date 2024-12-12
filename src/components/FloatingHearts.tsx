@@ -17,7 +17,7 @@ const FloatingHearts: React.FC = () => {
     };
 
     // Generate a new heart every 500ms
-    const interval = setInterval(createHeart, 500);
+    const interval = setInterval(createHeart, 2000);
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);

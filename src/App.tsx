@@ -69,9 +69,7 @@ function App() {
     <>
       <div>
         <FloatingHearts />
-        <h1 style={{ textAlign: "center", color: "#fff" }}>
-          Welcome to My Page!
-        </h1>
+        <h1 style={{ textAlign: "center", color: "#fff" }}></h1>
       </div>
 
       <h1 className="text-center text-primary fw-bold d-none d-md-block">

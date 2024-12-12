@@ -1,5 +1,5 @@
 body {
-  background-color: black; /* Rose background */
+  background-color: transparent; /* Rose background */
   overflow: hidden; /* Prevent scrollbars from appearing */
   position: relative;
   margin: 0; /* Remove default margin to avoid extra space */
@@ -10,6 +10,7 @@ body {
   width: 100px;
   height: 90px;
   margin-top: 10px;
+  background: transparent;
 }
 
 .heart::before,
