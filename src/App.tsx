@@ -1,12 +1,12 @@
 import "./App.css";
 import PasswordFieldWithCarousel from "./components/PasswordFieldWithCarousel";
-import ImageCarousel from "./components/ImageCarousel";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Img from "./components/Img";
 import halloween from "./assets/dome_y_randy_en_la_fiesta_de_halloween_2024.jpg";
 import juntos from "./assets/juntos.jpeg";
 import ella from "./assets/ella_sola_linda.jpeg";
+import ProtectedDestination from "./components/ProtectedDestination";
 
 const responsive = {
   superLargeDesktop: {
@@ -32,7 +32,8 @@ const images0 = [
   juntos,
   "https://via.placeholder.com/300x200?text=Image+2",
   "https://via.placeholder.com/300x200?text=Image+5",
-  "src/assets/dome_y_randy_en_la_fiesta_de_halloween_2024.jpg",
+  halloween,
+  ella,
 ];
 
 const renderCarousel = (images: string[]) => {
@@ -42,6 +43,7 @@ const renderCarousel = (images: string[]) => {
       itemClass="carousel-item-padding-40-px"
       className="p-2 carousel w-100 overflow-hidden  gap-3"
       responsive={responsive}
+      infinite={true}
     >
       {images.map((src, index) => (
         <div
@@ -70,49 +72,21 @@ function App() {
       </h1>
       <h2 className="d-none d-md-block">Carousel con contrasena</h2>
 
-      <PasswordFieldWithCarousel></PasswordFieldWithCarousel>
+      {/*<PasswordFieldWithCarousel></PasswordFieldWithCarousel>*/}
 
-      <div>
-        <h2>Custom Image Carousel</h2>
-        <ImageCarousel images={images0} visibleCount={1} />
-      </div>
-
-      <h2 className="d-none d-md-block">Carousel bonito</h2>
-      <Carousel responsive={responsive}>
-        <div>
-          <Img
-            src={halloween}
-            width={400}
-            height={400}
-            className="No"
-            usePlaceholder={false}
-          />
-        </div>
-        <div>
-          <Img
-            src={juntos}
-            width={400}
-            height={400}
-            className="cat-photo"
-            usePlaceholder={false}
-          />
-        </div>
-      </Carousel>
-      <div className="container mt-4">
-        <div className="row">
-          <h2 className="mt-5 mb-3 text-center">Carousel 2</h2>
+      <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden"></div>
+      <ProtectedDestination correctPassword="12345">
+        <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
+          <h2 className=" mb-3 text-center">Carousel 1</h2>
           {renderCarousel(images0)}
         </div>
-      </div>
-
-      <div className="container overflow-hidden">
-        <div className="row">
-          <div className="col  d-flex justify-content-center flex-column align-items-center">
-            <h2 className="mb-3 text-center">Carousel 1</h2>
-            {renderCarousel(images0)}
-          </div>
+      </ProtectedDestination>
+      <ProtectedDestination correctPassword="12345">
+        <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
+          <h2 className=" mb-3 text-center">Carousel 1</h2>
+          {renderCarousel(images0)}
         </div>
-      </div>
+      </ProtectedDestination>
     </>
   );
 }
