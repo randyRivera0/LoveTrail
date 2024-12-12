@@ -71,12 +71,6 @@ button:focus-visible {
   padding: 0 10px;
 }
 
-body {
-  background: linear-gradient(135deg, #ffc0cb, #ff69b4, #ff1493);
-  background-size: 400% 400%;
-  animation: gradientAnimation 6s ease infinite;
-}
-
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -127,12 +121,6 @@ body::after {
 }
 
 body {
-  background: linear-gradient(
-      135deg,
-      rgba(255, 192, 203, 0.8),
-      rgba(255, 105, 180, 0.8)
-    ),
-    url("https://www.example.com/your-image.jpg");
   background-size: cover;
   background-blend-mode: overlay;
 }
@@ -145,7 +133,6 @@ body {
 }
 
 body {
-  background: linear-gradient(135deg, #ffc0cb, #ff69b4);
 }
 
 body {
@@ -203,4 +190,10 @@ body {
     opacity: 1;
     transform: scale(1) rotate(45deg);
   }
+}
+
+body {
+  background: linear-gradient(135deg, #ffebee, #ff69b4, #ff3d3d);
+  background-size: 400% 400%;
+  animation: gradientAnimation 6s ease infinite;
 }

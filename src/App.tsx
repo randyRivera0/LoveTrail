@@ -3,11 +3,38 @@ import "./App.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Img from "./components/Img";
-import halloween from "./assets/dome_y_randy_en_la_fiesta_de_halloween_2024.jpg";
-import ella from "./assets/ella_sola_linda.jpeg";
-import one from "./assets/1.jpg";
 import ProtectedDestination from "./components/ProtectedDestination";
 import FloatingHearts from "./components/FloatingHearts";
+import "./love.css";
+import one from "./assets/1.jpg";
+import two from "./assets/2.jpg";
+import three from "./assets/3.jpg";
+import four from "./assets/4.jpg";
+import five from "./assets/5.jpg";
+import six from "./assets/6.jpg";
+import seven from "./assets/7.jpg";
+import eight from "./assets/8.jpg";
+import nine from "./assets/9.jpg";
+import ten from "./assets/10.jpg";
+import eleven from "./assets/11.jpg";
+import twelve from "./assets/12.jpg";
+import thirteen from "./assets/13.jpg";
+import fourteen from "./assets/14.jpg";
+import fifteen from "./assets/15.jpg";
+import sixteen from "./assets/16.jpg";
+import seventeen from "./assets/17.jpg";
+import eighteen from "./assets/18.jpg";
+import nineteen from "./assets/19.jpg";
+import twenty from "./assets/20.jpg";
+import twentyOne from "./assets/21.jpg";
+import twentyTwo from "./assets/22.jpg";
+import twentyThree from "./assets/23.jpg";
+import twentyFour from "./assets/24.jpg";
+import twentyFive from "./assets/25.jpg";
+import twentySix from "./assets/26.jpg";
+import twentySeven from "./assets/27.jpg";
+import twentyEight from "./assets/28.jpg";
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -28,13 +55,16 @@ const responsive = {
   },
 };
 
-const images0 = [
-  one,
-  "https://via.placeholder.com/300x200?text=Image+2",
-  "https://via.placeholder.com/300x200?text=Image+5",
-  halloween,
-  ella,
-];
+function generateImagePaths(start: number, end: number): string[] {
+  const paths: string[] = [];
+  for (let i = start; i <= end; i++) {
+    paths.push("./assets/" + i + ".jpg");
+  }
+  return paths;
+}
+
+const images0 = [one, two, three, four, five, six, seven];
+const images1 = [eight, nine, ten, , eleven, twelve, thirteen, fourteen];
 
 const renderCarousel = (images: string[]) => {
   return (
@@ -75,24 +105,22 @@ function App() {
       <h1 className="text-center text-primary fw-bold d-none d-md-block">
         Hasta el futuro juntos
       </h1>
-      <h2 className="d-none d-md-block">Carousel con contrasena</h2>
-
-      {/*<PasswordFieldWithCarousel></PasswordFieldWithCarousel>*/}
 
       <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden"></div>
       <ProtectedDestination
         correctPassword="12345"
-        prompt="El dia que nos conocimos"
+        prompt="🔒El dia que nos conocimos"
       >
         <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
-          <h2 className=" mb-3 text-center">Carousel 1</h2>
           {renderCarousel(images0)}
         </div>
       </ProtectedDestination>
-      <ProtectedDestination correctPassword="12345" prompt="cuanto me quieres">
+      <ProtectedDestination
+        correctPassword="12345"
+        prompt="🔒cuanto me quieres"
+      >
         <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
-          <h2 className=" mb-3 text-center">Carousel 1</h2>
-          {renderCarousel(images0)}
+          {renderCarousel(images1)}
         </div>
       </ProtectedDestination>
     </>

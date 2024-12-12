@@ -1,0 +1,105 @@
+@import url("https://fonts.cdnfonts.com/css/romantic");
+
+/* General body styling */
+body {
+  font-family: "Poppins", sans-serif; /* Elegant and modern font */
+  background-color: #f8f0f5; /* Soft pastel background */
+  color: #3e2a47; /* Elegant dark purple color for text */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Links Styling */
+a {
+  color: #e63946; /* Romantic red for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #f1faee; /* Light color on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Button Styling */
+button {
+  background-color: #e63946; /* Soft red background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f1faee; /* Light background color on hover */
+  color: #e63946; /* Dark red text on hover */
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in;
+}
+
+/* Text block and container styling */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Romantic background */
+.hero-section {
+  background: url("https://example.com/romantic-background.jpg") no-repeat
+    center center/cover;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* Romantic card style */
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Soft gradient background for sections */
+.section {
+  background: linear-gradient(135deg, #f8f0f5, #f1faee);
+  padding: 50px 0;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Romantic", sans-serif;
+  font-family: "Winter", sans-serif;
+}
