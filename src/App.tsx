@@ -1,4 +1,6 @@
 import "./App.css";
+import Grid from "@mui/material/Grid2";
+import Box from "@mui/material/Box";
 // import PasswordFieldWithCarousel from "./components/PasswordFieldWithCarousel";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -36,22 +38,20 @@ import twentySeven from "./assets/27.jpg";
 import twentyEight from "./assets/28.jpg";
 
 const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 2,
+    slidesToSlide: 3, // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 5,
+    slidesToSlide: 2, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 0,
+    slidesToSlide: 1, // optional, default to 1.
   },
 };
 /*
@@ -87,26 +87,21 @@ const images3 = [
 const renderCarousel = (images: string[]) => {
   return (
     <Carousel
-      containerClass="carousel-container px-2 gap-3"
-      itemClass="carousel-item-padding-40-px"
-      className="p-2 carousel w-100 overflow-hidden  gap-3"
+      containerClass="carousel-container px-2 "
+      removeArrowOnDeviceType={[]}
       responsive={responsive}
       infinite={true}
+      autoPlay={false}
+      itemClass="carousel-item-padding-40-px"
     >
       {images.map((src, index) => (
-        <div
-          key={index}
-          className="text-center image-wrapper"
-          style={{ padding: "0 10px" }}
-        >
-          <Img
-            src={src}
-            width={400}
-            height={400}
-            className={"images" + index}
-            usePlaceholder={false}
-          />
-        </div>
+        <Img
+          src={src}
+          width={400}
+          height={400}
+          className={"images" + index}
+          usePlaceholder={false}
+        />
       ))}
     </Carousel>
   );
@@ -116,40 +111,68 @@ function App() {
   return (
     <>
       <div>
-        <FloatingHearts />
-        <h1 style={{ textAlign: "center", color: "#fff" }}></h1>
+        <h1>Hasta el futuro juntos</h1>
       </div>
 
-      <h1 className="text-center text-white fw-bold d-none d-md-block">
-        Hasta el futuro juntos
-      </h1>
-
-      <div className="d-flex flex-column align-items-center justify-content-center mt-4 overflow-hidden">
-        <ProtectedDestination
-          correctPassword="riocentro ceibos"
-          prompt="🔒¿Cual fue nuestra primera salida en la calle?🔒"
+      <Box
+        sx={{
+          overflow: "hidden",
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          overflowY: "auto",
+          flexGrow: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <FloatingHearts></FloatingHearts>
+        <Grid
+          container
+          sx={{
+            maxWidth: "100%",
+          }}
         >
-          {renderCarousel(images0)}
-        </ProtectedDestination>
+          <ProtectedDestination
+            correctPassword="riocentro ceibos"
+            prompt="🔒¿Cual fue nuestra primera salida en la calle?🔒"
+          >
+            {renderCarousel(images0)}
+          </ProtectedDestination>
+        </Grid>
+
         <ProtectedDestination
           correctPassword="12/06/2024"
           prompt="🔒¿En que fecha nos hicimos novios?🔒"
         >
           {renderCarousel(images1)}
         </ProtectedDestination>
-        <ProtectedDestination
-          correctPassword="rectorado"
-          prompt="🔒¿Donde fue nuestro primer beso?🔒"
+        <Grid
+          container
+          sx={{
+            overflow: "hidden", // Prevent overflow
+            flexWrap: "wrap", // Allow items to wrap if needed
+            maxWidth: "100%",
+            alignItems: "center",
+            flexGrow: 1,
+          }}
         >
-          {renderCarousel(images2)}
-        </ProtectedDestination>
+          <ProtectedDestination
+            correctPassword="rectorado"
+            prompt="🔒¿Donde fue nuestro primer beso?🔒"
+          >
+            {renderCarousel(images2)}
+          </ProtectedDestination>
+        </Grid>
+
         <ProtectedDestination
           correctPassword="si"
           prompt="🔒¿Deseas continuar juntos por mucho tiempo?🔒"
         >
           {renderCarousel(images3)}
         </ProtectedDestination>
-      </div>
+      </Box>
     </>
   );
 }
