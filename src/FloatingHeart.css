@@ -1,8 +1,41 @@
-body {
-  background-color: transparent; /* Rose background */
-  overflow: hidden; /* Prevent scrollbars from appearing */
-  position: relative;
-  margin: 0; /* Remove default margin to avoid extra space */
+/* Create individual heart elements */
+.heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  transform: rotate(45deg);
+  animation: floatHearts 8s infinite ease-in-out;
+  opacity: 0;
+}
+
+/* Adjust shape for the heart's "lobes" */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  left: auto;
+  right: -25px;
+}
+
+@keyframes heartAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
 }
 
 .heart {

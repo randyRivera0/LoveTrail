@@ -1,15 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/romantic");
 
-/* General body styling */
-body {
-  font-family: "Poppins", sans-serif; /* Elegant and modern font */
-  background-color: #f8f0f5; /* Soft pastel background */
-  color: #3e2a47; /* Elegant dark purple color for text */
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
 /* Links Styling */
 a {
   color: #e63946; /* Romantic red for links */
@@ -55,13 +45,6 @@ button:hover {
   animation: fadeIn 2s ease-in;
 }
 
-/* Text block and container styling */
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 30px 0;
-}
-
 .text-center {
   text-align: center;
 }
@@ -97,8 +80,4 @@ button:hover {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
-}
-body {
-  font-family: "Romantic", sans-serif;
-  font-family: "Winter", sans-serif;
 }
