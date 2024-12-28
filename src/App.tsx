@@ -1,7 +1,6 @@
 import "./App.css";
 import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
-// import PasswordFieldWithCarousel from "./components/PasswordFieldWithCarousel";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Img from "./components/Img";
@@ -92,6 +91,7 @@ const renderCarousel = (images: string[]) => {
       infinite={true}
       autoPlay={false}
       itemClass="carousel-item-padding-40-px"
+      /*centerMode={true}*/
     >
       {images.map((src, index) => (
         <Img
@@ -110,7 +110,9 @@ function App() {
   return (
     <>
       <div>
-        <h1>Hasta el futuro juntos</h1>
+        <h1>
+          Hasta el futuro juntos <span className="heart">♥</span>
+        </h1>
       </div>
 
       <Box
@@ -133,21 +135,24 @@ function App() {
             {renderCarousel(images0)}
           </ProtectedDestination>
         </Grid>
-
-        <ProtectedDestination
-          correctPassword="12/06/2024"
-          prompt="🔒¿En que fecha nos hicimos novios?🔒"
-        >
-          {renderCarousel(images1)}
-        </ProtectedDestination>
         <Grid
           container
           sx={{
-            overflow: "hidden", // Prevent overflow
-            flexWrap: "wrap", // Allow items to wrap if needed
             maxWidth: "100%",
-            alignItems: "center",
-            flexGrow: 1,
+          }}
+        >
+          <ProtectedDestination
+            correctPassword="12/06/2024"
+            prompt="🔒¿En que fecha nos hicimos novios?🔒"
+          >
+            {renderCarousel(images1)}
+          </ProtectedDestination>
+        </Grid>
+
+        <Grid
+          container
+          sx={{
+            maxWidth: "100%",
           }}
         >
           <ProtectedDestination
@@ -157,13 +162,19 @@ function App() {
             {renderCarousel(images2)}
           </ProtectedDestination>
         </Grid>
-
-        <ProtectedDestination
-          correctPassword="si"
-          prompt="🔒¿Deseas continuar juntos por mucho tiempo?🔒"
+        <Grid
+          container
+          sx={{
+            maxWidth: "100%",
+          }}
         >
-          {renderCarousel(images3)}
-        </ProtectedDestination>
+          <ProtectedDestination
+            correctPassword="si"
+            prompt="🔒¿Deseas continuar juntos por mucho tiempo?🔒"
+          >
+            {renderCarousel(images3)}
+          </ProtectedDestination>
+        </Grid>
       </Box>
     </>
   );

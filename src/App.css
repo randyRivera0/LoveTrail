@@ -37,3 +37,25 @@
 .image-wrapper {
   padding: 0 10px;
 }
+
+.carousel-container {
+  margin: 20px;
+  padding: 10px;
+}
+
+.carousel-item-padding-40-px {
+  padding: 20px;
+}
+
+img {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px; /* Para bordes redondeados opcionales */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+span.heart {
+  color: rgb(253, 116, 116);
+  font-size: 1em;
+  text-shadow: 0 0 5px #dd9595; /* Efecto brillante opcional */
+}
